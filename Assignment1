@@ -1,11 +1,21 @@
 public class Main
 {
 	public static void main(String[] args) {
-        String str="vishnu";
-        toUppercase(str);
+        // String str="vishnu";
+        // toUppercase(str);
+        System.out.println(tc1ValidString());
+        System.out.println(tc2ValidStringWithTwoWords());
+        System.out.println(tc3SingleAlphabetAsString());
+        System.out.println(tc4SingleSpecialCharectorAsString());
+        System.out.println(tc5SingleNumberAsString());
+        System.out.println(tc6EnterNull());
+        System.out.println(tc7AlphaNumericAsString());
+        System.out.println(tc8AllCharectorsAsString());
+        System.out.println(tc9AllNumbersAsString());
+        System.out.println(tc10AllNumbersAsString()); 
         
     }
-    public static void toUppercase(String str){
+    public static String toUppercase(String str){
         String result="";
         for(int i=0,e=str.length();i < e; ++i){
              if(Character.isLowerCase(str.charAt(i)) && Character.isLetter(str.charAt(i))){
@@ -15,8 +25,117 @@ public class Main
                  result+= (char)(str.charAt(i));
              }
         }
-       System.out.println(result);
+       return result;
         
     }
+    public static boolean tc1ValidString(){
+        String expected = "VISHNU";
+        String input = "Vishnu";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc2ValidStringWithTwoWords(){
+        String expected = "VISHNU BHARATH";
+        String input = "Vishnu Bharath";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc3SingleAlphabetAsString(){
+        String expected = "A";
+        String input = "a";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc4SingleSpecialCharectorAsString(){
+        String expected = "@";
+        String input = "@";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc5SingleNumberAsString(){
+        String expected = "1";
+        String input = "1";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc6EnterNull(){
+        String input = null;
+        String result="";
+        try {
+            
+            result = toUppercase(input);
+        } catch (NullPointerException e) {
+            result="Error massage";
+        }
+        if(result!="Error massage"){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc7AlphaNumericAsString(){
+        String expected = "VIS456HNU";
+        String input = "Vis456hnu";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc8AllCharectorsAsString(){
+        String expected = "VIS456HNU@!";
+        String input = "Vis456hnu@!";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc9AllNumbersAsString(){
+        String expected = "1234";
+        String input = "1234";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    public static boolean tc10AllNumbersAsString(){
+        String expected = "V I S H N U";
+        String input = "v i s h n u";
+        String result = toUppercase(input);
+        if(result.equals(expected)){
+            return true;
+        }
+        return false;
+        
+    }
+    
+    
+    
+}
     
 }
